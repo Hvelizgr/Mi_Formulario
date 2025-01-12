@@ -1,0 +1,101 @@
+---
+
+import GitHub from "./icon/GitHub.astro"
+import Astroicon from "./icon/Tecnology/Astroicon.astro"
+import Css from "./icon/Tecnology/Css.astro"
+import Html from "./icon/Tecnology/Html.astro"
+import Javascrip from "./icon/Tecnology/Javascrip.astro"
+import React from "./icon/Tecnology/React.astro"
+import LinkButton from "./LinkButton.astro"
+import WebIcons from './icon/Tecnology/WebIcons.astro'
+
+
+
+const TAGS = {
+    html: {
+        name: 'html 5',
+        class: "bg-black text-white",
+        icon: Html,
+    },
+
+    Javascrip: {
+        name: 'Javascrip',
+        class: "bg-black text-white",
+        icon: Javascrip,
+    },
+
+    Css: {
+        name: 'Css',
+        class: "bg-black text-white",
+        icon: Css,
+    },
+
+    Astroicon: {
+        name: 'Astroi',
+        class: "bg-black text-white",
+        icon: Astroicon,
+    },
+
+    React: {
+        name: 'React',
+        class: "bg-black text-white",
+        icon: React,
+    } 
+
+
+}
+
+const PROJETS = [
+    {
+        title: 'Followers',
+        description: 
+            'Botones de seguir funcionales al estilo X',
+        image: '/ImageProjects/Followers.webp',
+        link:"#",
+        github:"https://github.com/",
+        tags: [TAGS.html,TAGS.Css,TAGS.Javascrip,TAGS.React,TAGS.Astroicon]
+
+    },
+]
+---
+<section class="flex flex-col gap-y-16">
+
+
+    {
+        PROJETS.map(({ image, title, description, tags, link, github}) => (
+            <article>
+                <h3 class = "text-2xl font-semibold text-yellow-200 mb-2 gap-y-2">{title} </h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class={"flex gap-x-2 flex-row mb-4"}>
+                    {tags.map((tags) => (
+                        <li> 
+                            <span class ={`flex gap-x-2 rounded-full text-xs ${tags.class} py-1px-2`}>
+                                <tags.icon class="size-6" />{tags.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <img 
+                    loading="lazy"
+                    class="rounded shadow-2xl shadows-white/10 aspect-video"
+                    src={image} 
+                    alt={`Captura de pantalla del proyecto ${image}`} />
+
+                <footer class = "flex gap-x-4 items-end mt-2">
+                    <LinkButton href={github}>
+                        <GitHub class=" size-4"/>
+                        Ver Código fuente 
+                    </LinkButton>
+                    <LinkButton href={link}>
+                        <WebIcons class="size-4"/>
+                        ir al sitio web
+                    </LinkButton>
+
+                </footer>
+
+            </article>
+        ))
+    }
+
+</section>
+

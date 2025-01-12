@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import Social from '../components/Social.astro';
+import SectionConteiner from '../components/SecctionConteiner.astro';
+
+import LinkedIn from '../components/icon/LinkedIn.astro'
+import GitHub from '../components/icon/GitHub.astro'
+import Mail from '../components/icon/Mail.astro'
+import Experience from '../components/Experience.astro';
+import Work from '../components/icon/work.astro';
+import CodeIcon from '../components/icon/codeIcon.astro'
+import Project from '../components/Project.astro';
+import ProfileIcon from '../components/icon/ProfileIcon.astro';
+
+import AboutMe from '../components/AboutMe.astro'
+---
+
+<Layout 
+	title="Portafolio de Hvelizgr"
+	description='creador de paginas web novato'>
+	<main class = "px-4">
+		<SectionConteiner class= "py-44 pb-32"> 
+			<img 
+				class="rounded-full size-12 mb-4"
+				src="https://scontent.fgua9-1.fna.fbcdn.net/v/t39.30808-6/463386034_3622245141239613_2714374662631885034_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=JCt3i5c6u6MQ7kNvgGJVU3l&_nc_zt=23&_nc_ht=scontent.fgua9-1.fna&_nc_gid=AdBE5T-86JdsClVkJcro4uT&oh=00_AYBDcWi4datxCSAufZlwP0rKHCtuTQaJnjW3M9jndNgEyA&oe=67858E03" 
+				alt="Foto de Hveliz G" 
+			/>
+			<h1 class="* text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Soy Héctor Veliz
+				<a href="https://www.linkedin.com/in/hvelizgr" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center">
+					<Badge>Siempre listo para nuevos retos</Badge>
+				</a>
+			</h1>
+
+			 
+			<h2 class = "text-wrap text-xl lg:text-2xl max-w-[700px]"> Soy estudiante de Ingeniería en Sistemas y me encanta aprender cosas nuevas. Me motiva resolver problemas de manera creativa y siempre busco maneras de mejorar. Estoy emocionado por seguir creciendo como desarrollador y explorar nuevas tecnologías que me ayuden a crear soluciones útiles</h2>
+
+			<nav class = "flex gap-4 mt-8 flex-wrap">
+
+				<Social href="https://www.linkedin.com/in/hvelizgr" >
+					<LinkedIn class = "size-4 lg:size-6" />
+						LinkeIn
+				</Social>
+
+				<Social href="https://github.com/Hvelizgr" >
+					<GitHub class = "size-4 lg:size-6" />
+						GitHub
+				</Social>
+
+				<Social href= "mailto:hvelizgr@gmail.com" >
+					<Mail class = "size-4 lg:size-6" />
+						hvelizgr@gmail.com
+				</Social>
+			</nav>
+
+		</SectionConteiner>
+
+		{/*<SectionConteiner id = "Experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Work class="size-6" />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionConteiner>  */}
+
+		<SectionConteiner id = "Sobre-mi">
+			<h2 class="text-pretty text-5xl font-semibold mb-6 flex gap-x-2 items-center mt-4">
+				<ProfileIcon con class="size-6" />
+				Sobre mi
+			</h2>
+			<AboutMe />
+		</SectionConteiner>
+
+		<SectionConteiner id = "Proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<CodeIcon con class="size-6" />
+				Experiencia en proyectos
+			</h2>
+			<Project />
+		</SectionConteiner>
+		
+
+
+
+	</main>
+</Layout>
+
